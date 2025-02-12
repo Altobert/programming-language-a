@@ -19,11 +19,12 @@ fun sort_pair (pr : int*int) =
     else (#2 pr, #1 pr) 
 
 (* nested pairs *)
+val midato = (3, true) (* bool * int *)
 
 val x1 = (7,(true,9)) (* int * (bool*int) *)
 
 val x2 = #1 (#2 x1)  (* bool *)
 
-val x3 = (#2 x1)      (* bool*int *)
+val x3 = (#2 x1)      (* bool*int *) 
 
 val x4 = ((3,5),((4,8),(0,0))) (* (int * int) * ((int * int) * (int * int)) *)
