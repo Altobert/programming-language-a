@@ -49,15 +49,15 @@ val cubo = cube (3);
 
 val test1 = is_older ((2025, 5, 10),(2023, 5, 11)) = true;
 
-val potencia = pow (2, 5);
-
-(*homework2*)
+(*
+Write a function number_in_month that takes a list of dates and a month (i.e., an int) and returns
+how many dates in the list are in the given month.
+*)
 fun number_in_month (dates: (int * int * int) list, month: int) : int =
-    ;
-val test2 = number_in_month ([(2012,2,28),(2013,12,1)],2) = 1
+    if null dates
+        then 0
+    else if #2 (hd dates) = month
+        then 1 + number_in_month(tl dates, month)
+    else number_in_month(tl dates, month);
 
-
-
-
-
-
+number_in_month([(2025, 5, 10),(2023, 5, 11),(2025, 5, 10),(2023, 5, 11)], 2); (* 4 *)
